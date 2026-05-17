@@ -4,14 +4,9 @@ KNIME Analytics Platform packaged as a Nix flake for Linux.
 
 ## What is this?
 
-This repository packages [KNIME Analytics Platform](https://www.knime.com/knime-analytics-platform)  
-for NixOS and Nix on Linux. It handles all native library dependencies (X11, GTK, CEF/Chromium,  
-Java2D, ...) via `autoPatchelfHook` and wraps the Eclipse-based launcher with the environment  
-required to run reliably under NixOS.
+This repository packages [KNIME Analytics Platform](https://www.knime.com/knime-analytics-platform) for NixOS and Nix on Linux. It handles all native library dependencies (X11, GTK, CEF/Chromium, Java2D, ...) via `autoPatchelfHook` and wraps the Eclipse-based launcher with the environment required to run reliably under NixOS.
 
-KNIME bundles its own JRE ([Eclipse Adoptium](https://adoptium.net/)) and a Chromium Embedded  
-Framework ([Equo Chromium](https://www.equo.dev/chromium)) as browser -- no system Java  
-installation is required.
+KNIME bundles its own JRE ([Eclipse Adoptium](https://adoptium.net/)) and a Chromium Embedded Framework ([Equo Chromium](https://www.equo.dev/chromium)) as browser -- no system Java installation is required.
 
 ## How to use
 
@@ -49,8 +44,7 @@ git clone https://github.com/3nol/nix-knime \
 
 ## Configuration
 
-See the official [KNIME documentation](https://docs.knime.com/ap/latest/analytics_platform_user_guide/#configuring-knime-analytics-platform)  
-for all available configuration options.
+See the official [KNIME documentation](https://docs.knime.com/ap/latest/analytics_platform_user_guide/#configuring-knime-analytics-platform) for all available configuration options.
 
 ### Custom JVM arguments
 
@@ -63,8 +57,7 @@ inputs.nix-knime.packages.x86_64-linux.knime.override {
 }
 ```
 
-The default sets `-Djdk.http.auth.tunneling.disabledSchemes=`, which re-enables HTTP Basic  
-authentication over CONNECT proxy tunnels (see [FAQ](https://www.knime.com/faq#q42)).
+The default sets `-Djdk.http.auth.tunneling.disabledSchemes=""`, which re-enables HTTP Basic authentication over CONNECT proxy tunnels (see [FAQ](https://www.knime.com/faq#q42)).
 
 ### Workspace and Eclipse runtime options
 
@@ -76,5 +69,4 @@ knime -clean                          # clears OSGi caches on startup
 knime -debug                          # enables OSGi debug mode
 ```
 
-See the official [Eclipse documentation](https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fmisc%2Fruntime-options.html)  
-for all runtime options.
+See the official [Eclipse documentation](https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fmisc%2Fruntime-options.html) for all runtime options.
