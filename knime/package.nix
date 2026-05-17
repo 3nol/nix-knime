@@ -104,7 +104,10 @@ let
     desktopName = "KNIME Analytics Platform";
     icon = "knime";
     exec = "knime %u";
-    categories = [ "Science" "Education" ];
+    categories = [
+      "Science"
+      "Education"
+    ];
     # .knwf/.knap use Eclipse-internal content-type APIs, not freedesktop MIME
     mimeTypes = [ "x-scheme-handler/knime" ];
     startupNotify = true;
