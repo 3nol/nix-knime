@@ -22,7 +22,7 @@
       in
       {
         packages = {
-          knime = pkgs.callPackage ./package.nix { };
+          knime = pkgs.callPackage ./knime/package.nix { };
           default = self.packages.${system}.knime;
         };
       }
